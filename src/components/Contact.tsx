@@ -17,25 +17,29 @@ const Contact = () => {
             <h2 className="md:text-[48px] sm:text-[24px] text-[20px] mb-12 font-semibold">
               Get in touch
             </h2>
-            <form className="flex flex-col gap-6">
+            <form className="flex flex-col gap-6" suppressHydrationWarning={true}>
               <input
                 className="border w-full h-[59px] bg-transparent rounded-lg px-6"
                 placeholder="Full Name"
+                suppressHydrationWarning={true}
               />
               <input
                 className="border w-full h-[59px] bg-transparent rounded-lg px-6"
                 placeholder="Email"
+                suppressHydrationWarning={true}
               />
               <input
                 className="border w-full h-[59px] bg-transparent rounded-lg px-6"
                 placeholder="Company Name"
+                suppressHydrationWarning={true}
               />
               <textarea
                 className="border bg-transparent focus:ring-2  focus:outline-none w-full h-[120px]  rounded-lg px-4 py-2 text-white placeholder-gray-400 shadow-sm resize-none"
                 placeholder="Message here.."
                 rows={4}
+                suppressHydrationWarning={true}
               />
-              <button className="w-full h-[59px] bg-[#247cf8] rounded-lg px-6 flex justify-center items-center gap-[10px] ">
+              <button className="w-full h-[59px] bg-[#247cf8] rounded-lg px-6 flex justify-center items-center gap-[10px] " suppressHydrationWarning={true}>
                 SEND NOW
                 <Image src={send} alt="" />
               </button>

@@ -119,15 +119,17 @@ const Hero = () => {
             className="flex sm:flex-row flex-col items-center gap-[16px] mt-10"
             variants={childVariants}
           >
-            <Link
-              href={"/pricing"}
+            <a
+              href="https://app.zenmicro.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center"
             >
               Get Started
               <span>
                 <Image src={arrow} alt="Arrow" className="size-6" priority />
               </span>
-            </Link>
+            </a>
             <Link
               href={"/contact-us"}
               className="flex px-6 py-3 rounded-[12px] bg-transparent font-normal text-white items-center border"

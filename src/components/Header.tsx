@@ -106,8 +106,10 @@ const Header = () => {
                 Contact Us
               </Link>
 
-              <Link
-                href="/pricing"
+              <a
+                href="https://app.zenmicro.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex md:hidden px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center"
                 onClick={() => toggleMenu(false)}
               >
@@ -115,12 +117,14 @@ const Header = () => {
                 <span>
                   <Image src={arrow} alt="Arrow" className="size-6" priority />
                 </span>
-              </Link>
+              </a>
             </div>
           </div>
 
-          <Link
-            href="/pricing"
+          <a
+            href="https://app.zenmicro.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-6 py-3 hidden rounded-[12px] bg-[#247CF8] font-normal text-white items-center ${
               pathname === "/pricing" ? "hidden" : "md:flex"
             }`}
@@ -129,7 +133,7 @@ const Header = () => {
             <span>
               <Image src={arrow} alt="Arrow" className="size-6" priority />
             </span>
-          </Link>
+          </a>
         </div>
       </div>
 

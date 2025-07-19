@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:html_public": "next build && node -e \"const fs=require('fs');if(fs.existsSync('html_public')){fs.rmSync('html_public',{recursive:true});}fs.cpSync('out','html_public',{recursive:true});console.log('✓ Output copied to html_public');\"",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },

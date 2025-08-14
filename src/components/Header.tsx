@@ -92,7 +92,7 @@ const Header = () => {
                 }`}
                 onClick={() => toggleMenu(false)}
               >
-                About Us
+                Solution & Pricing
               </Link>
               <Link
                 href="/contact-us"

@@ -5,7 +5,7 @@
       "name": "Next.js: debug server-side",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "program": "${workspaceFolder}/code/node_modules/next/dist/bin/next",
       "args": ["dev"],
       "console": "integratedTerminal",
       "env": {
@@ -17,13 +17,13 @@
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}/code"
     },
     {
       "name": "Next.js: debug full stack",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "program": "${workspaceFolder}/code/node_modules/next/dist/bin/next",
       "args": ["dev"],
       "console": "integratedTerminal",
       "serverReadyAction": {
@@ -36,7 +36,7 @@
       "name": "Custom Server",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/server.js",
+      "program": "${workspaceFolder}/code/server.js",
       "console": "integratedTerminal",
       "env": {
         "NODE_ENV": "development"

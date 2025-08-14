@@ -1,0 +1,32 @@
+{
+  "name": "next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:html_public": "next build && node -e \"const fs=require('fs');if(fs.existsSync('html_public')){fs.rmSync('html_public',{recursive:true});}fs.cpSync('out','html_public',{recursive:true});console.log('✓ Output copied to html_public');\"",
+    "build:root": "next build && node -e \"const fs=require('fs');const path=require('path');const outputDir=path.join('..','html_public');if(fs.existsSync(outputDir)){fs.rmSync(outputDir,{recursive:true});}fs.cpSync('out',outputDir,{recursive:true});console.log('✓ Output copied to repo root/html_public');\"",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^12.5.0",
+    "gsap": "^3.12.7",
+    "next": "^15.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

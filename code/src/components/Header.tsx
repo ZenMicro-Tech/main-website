@@ -84,9 +84,9 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                href="/about-us"
+                href="/solution-pricing"
                 className={`${
-                  isActive("/about-us")
+                  isActive("/solution-pricing")
                     ? "text-[#247CF8] font-bold text-[18px]"
                     : ""
                 }`}

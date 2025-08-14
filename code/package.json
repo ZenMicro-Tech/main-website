@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:html_public": "next build && node -e \"const fs=require('fs');if(fs.existsSync('html_public')){fs.rmSync('html_public',{recursive:true});}fs.cpSync('out','html_public',{recursive:true});console.log('✓ Output copied to html_public');\"",
-    "build:root": "next build && node -e \"const fs=require('fs');const path=require('path');const outputDir=path.join('..','html_public');if(fs.existsSync(outputDir)){fs.rmSync(outputDir,{recursive:true});}fs.cpSync('out',outputDir,{recursive:true});console.log('✓ Output copied to repo root/html_public');\"",
+    "build:root": "next build && node -e \"const fs=require('fs');const path=require('path');const outputDir='..';const outDir='out';if(fs.existsSync(outDir)){const files=fs.readdirSync(outDir);files.forEach(file=>{const srcPath=path.join(outDir,file);const destPath=path.join(outputDir,file);if(fs.existsSync(destPath)){if(fs.statSync(destPath).isDirectory()){fs.rmSync(destPath,{recursive:true});}else{fs.unlinkSync(destPath);}}fs.cpSync(srcPath,destPath,{recursive:true});});console.log('Build output copied directly to repo root');}\"",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },

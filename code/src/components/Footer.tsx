@@ -21,9 +21,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="md:h-16 h-8 border-b"></div>
-        <div className="md:mt-8 mt-4 flex justify-center items-center">
-          <p>© 2024 Zenmicro. All rights reserved.</p>
-        </div>
       </div>
     </div>
   );

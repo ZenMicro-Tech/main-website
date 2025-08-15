@@ -35,7 +35,7 @@ const Header = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[40] w-full bg-white/5 backdrop-blur-[20px] shadow-2xl">
+    <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[40] w-full bg-black/30 backdrop-blur-[20px] shadow-2xl">
       <div className="container mx-auto ">
         <div className="flex justify-between items-center md:py-6 py-4 w-full">
          

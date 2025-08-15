@@ -32,47 +32,48 @@ export default function SolutionPricing() {
             </p>
           </div>
           
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-start gap-12">
+            {/* Left side: Graph and text below it */}
             <div className="lg:w-1/2">
-              <Image 
-                src="/CloudSpendGrowth.png" 
-                alt="Cloud Spending Growth Chart" 
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-                priority
-              />
-            </div>
-            <div className="lg:w-1/2">
+              <div className="mb-8">
+                <Image 
+                  src="/CloudSpendGrowth.png" 
+                  alt="Cloud Spending Growth Chart" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg"
+                  priority
+                />
+              </div>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Since 2016, global cloud spending has surged by more than 300%, with forecasts projecting it will reach $825 billion in 2025. The message is clear: effective cost management has never been more critical.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Why It Matters Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-            Why It Matters?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-blue-900 mb-4">Spending is Accelerating</h3>
-              <p className="text-gray-700">2025 projections show global cloud spend rising to ~$720–825B.</p>
-            </div>
-            <div className="bg-red-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-red-900 mb-4">Waste is Significant</h3>
-              <p className="text-gray-700">On average, one-third of cloud budgets remain unused or under-optimized.</p>
-            </div>
-            <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-900 mb-4">FinOps is Paying Off</h3>
-              <p className="text-gray-700">Organizations leveraging FinOps strategies and AI-driven tools are reducing costs by up to 40%.</p>
+            {/* Right side: Why It Matters */}
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+                Why It Matters?
+              </h2>
+              <div className="space-y-6 max-w-md mx-auto">
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4">Spending is Accelerating</h3>
+                  <p className="text-gray-700">2025 projections show global cloud spend rising to ~$720–825B.</p>
+                </div>
+                <div className="bg-red-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-red-900 mb-4">Waste is Significant</h3>
+                  <p className="text-gray-700">On average, one-third of cloud budgets remain unused or under-optimized.</p>
+                </div>
+                <div className="bg-green-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-green-900 mb-4">FinOps is Paying Off</h3>
+                  <p className="text-gray-700">Organizations leveraging FinOps strategies and AI-driven tools are reducing costs by up to 40%.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-xl text-center">
+
+          {/* ZenMicro Difference - moved to bottom of hero section */}
+          <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-xl text-center">
             <h3 className="text-2xl font-bold mb-4">The ZenMicro Difference</h3>
             <p className="text-lg">
               With ZenMicro, you&apos;re not reacting to overspend after the fact — you&apos;re proactively controlling, predicting, and optimizing with data-backed precision.

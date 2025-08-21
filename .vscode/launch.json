@@ -8,6 +8,7 @@
       "program": "${workspaceFolder}/code/node_modules/next/dist/bin/next",
       "args": ["dev"],
       "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/code",
       "env": {
         "NODE_ENV": "development"
       }
@@ -26,6 +27,7 @@
       "program": "${workspaceFolder}/code/node_modules/next/dist/bin/next",
       "args": ["dev"],
       "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/code",
       "serverReadyAction": {
         "pattern": "ready - started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
@@ -38,6 +40,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/code/server.js",
       "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/code",
       "env": {
         "NODE_ENV": "development"
       }

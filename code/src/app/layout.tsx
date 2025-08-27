@@ -4,8 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { Suspense } from "react";
 import GlobalLoader from "@/components/GlobalLoader";
-// import Footer from "@/components/Footer";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +86,9 @@ export default function RootLayout({
           <div className="pt-[100px] font-poppins">
             <Suspense fallback={<GlobalLoader />}>{children}</Suspense>
           </div>
+          <footer>
+            <Footer />
+          </footer>
         </main>
       </body>
     </html>

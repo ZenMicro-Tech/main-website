@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import Contact from "../components/Contact";
 import HeroHome from "../components/HeroHome";
 import Services from "../components/Services";
@@ -16,9 +15,6 @@ export default function Home() {
       <HeroHome />
       <Services />
       <Contact />
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

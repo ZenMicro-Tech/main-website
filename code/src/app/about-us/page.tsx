@@ -27,12 +27,6 @@ const AboutUsPage = () => {
       <SoftwareDevelopment />
       <AboutContact />
 
-      <footer>
-        <AboutUsFooter />
-      </footer>
-      {/* <footer>
-        <Footer />
-      </footer> */}
 
       {/* Design middle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2    -z-10 ">

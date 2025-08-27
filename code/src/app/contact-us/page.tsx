@@ -1,7 +1,6 @@
 import React from "react";
 // import Contact from "../../components/Contact";
 import AboutContact from "@/components/AboutContact";
-import AboutUsFooter from "@/components/AboutUsFooter";
 import Image from "next/image";
 import design2 from "@/images/new/Ellipse 6.png";
 import { Metadata } from "next";
@@ -15,7 +14,6 @@ const ContactUsPage = () => {
   return (
     <div className="relative overflow-hidden pt-10">
       <AboutContact />
-      <AboutUsFooter />
 
       {/* Design middle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2    -z-10  ">

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from 'next/image';
-import Footer from "@/components/Footer";
 import { useState } from "react";
 
 export default function SolutionPricing() {
@@ -269,9 +268,6 @@ export default function SolutionPricing() {
         </div>
       </section>
 
-      <footer>
-        <Footer />
-      </footer>
 
       {/* Image Modal */}
       {modalImage && (

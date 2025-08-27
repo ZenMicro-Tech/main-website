@@ -1,4 +1,3 @@
-import AboutUsFooter from "@/components/AboutUsFooter";
 import Pricing from "@/components/Pricing";
 import Image from "next/image";
 import React from "react";
@@ -15,7 +14,6 @@ const page = () => {
   return (
     <div className="relative overflow-hidden md:pt-10">
       <Pricing />
-      <AboutUsFooter />
 
       {/* Footer design */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2    -z-10  ">

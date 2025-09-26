@@ -9,6 +9,7 @@ import design2 from "@/images/new/Ellipse 8 (2).png";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
+import { trackFormSubmission, trackContactSubmission } from '@/lib/analytics';
 
 const AboutContact = () => {
   const pathname = usePathname();
@@ -45,6 +46,11 @@ const AboutContact = () => {
         .then((result) => {
           console.log('SUCCESS!', result.text);
           setMessage('Message sent successfully! We\'ll get back to you soon.');
+          
+          // Track successful about page contact form submission
+          trackFormSubmission('about_contact_form', true);
+          trackContactSubmission('about_page');
+          
           setFormData({
             fullName: '',
             email: '',
@@ -54,6 +60,9 @@ const AboutContact = () => {
         }, (error) => {
           console.log('FAILED...', error.text);
           setMessage('Failed to send message. Please try again later.');
+          
+          // Track failed form submission
+          trackFormSubmission('about_contact_form', false);
         })
         .finally(() => {
           setIsLoading(false);

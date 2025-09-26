@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import { Suspense } from "react";
 import GlobalLoader from "@/components/GlobalLoader";
 import Footer from "@/components/Footer";
+import GoogleTagManager from "@/components/GoogleTagManager";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -81,6 +83,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}  ${sofia_Sans.variable} antialiased bg-[#0F1433]`}
       >
+        {/* Add your GTM ID here when you get it from Google Tag Manager */}
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        )}
+        
+        {/* Add your GA4 Measurement ID when you get it from Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
         <main className=" ">
           <Header />
           <div className="pt-[100px] font-poppins">

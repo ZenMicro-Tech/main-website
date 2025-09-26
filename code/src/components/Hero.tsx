@@ -8,9 +8,9 @@ import Link from "next/link";
 import arrow from "@/images/right-arrow 1.svg";
 import design from "@/images/Ellipse 2.svg";
 import { motion } from "framer-motion";
+import { trackButtonClick } from '@/lib/analytics';
 
 const Hero = () => {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -124,6 +124,14 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center"
+              onClick={(e) => {
+                e.preventDefault();
+                trackButtonClick('Get Started', 'hero_section');
+                // Small delay to ensure tracking fires before navigation
+                setTimeout(() => {
+                  window.open('https://app.zenmicro.tech/', '_blank');
+                }, 100);
+              }}
             >
               Get Started
               <span>
@@ -133,6 +141,7 @@ const Hero = () => {
             <Link
               href={"/contact-us"}
               className="flex px-6 py-3 rounded-[12px] bg-transparent font-normal text-white items-center border"
+              onClick={() => trackButtonClick('Contact Us', 'hero_section')}
             >
               Contact Us
             </Link>

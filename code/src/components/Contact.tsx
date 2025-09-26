@@ -5,6 +5,7 @@ import React, { useState, useRef } from "react";
 import f from "@/images/new/Frame 1566662601.png";
 import send from "@/images/send 1.svg";
 import emailjs from '@emailjs/browser';
+import { trackFormSubmission, trackContactSubmission } from '@/lib/analytics';
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -40,6 +41,11 @@ const Contact = () => {
         .then((result) => {
           console.log('SUCCESS!', result.text);
           setMessage('Message sent successfully! We\'ll get back to you soon.');
+          
+          // Track successful form submission
+          trackFormSubmission('contact_form', true);
+          trackContactSubmission('contact_form');
+          
           setFormData({
             fullName: '',
             email: '',
@@ -49,6 +55,9 @@ const Contact = () => {
         }, (error) => {
           console.log('FAILED...', error.text);
           setMessage('Failed to send message. Please try again later.');
+          
+          // Track failed form submission
+          trackFormSubmission('contact_form', false);
         })
         .finally(() => {
           setIsLoading(false);

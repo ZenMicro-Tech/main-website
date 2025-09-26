@@ -16,6 +16,7 @@ import design from "@/images/new/Ellipse 5.png";
 import design3 from "@/images/Ellipse 3 (1).png";
 import design4 from "@/images/Ellipse 4.svg";
 import { motion } from "framer-motion";
+import { trackButtonClick, trackServiceInquiry } from '@/lib/analytics';
 
 const Services = () => {
   const services = [
@@ -63,6 +64,10 @@ const Services = () => {
         behavior: 'smooth',
         block: 'center'
       });
+      
+      // Track service icon click
+      const serviceName = services.find(s => s.id === id)?.title || id;
+      trackButtonClick(`Service Icon - ${serviceName}`, 'services_navigation');
     }
   };
 
@@ -182,7 +187,14 @@ const Services = () => {
                   {service.title}
                 </h3>
                 <p className="mb-8">{service.dscription}</p>
-                <Link className="px-6 py-3 border rounded-lg w-max" href={"#"}>
+                <Link 
+                  className="px-6 py-3 border rounded-lg w-max" 
+                  href={"#"}
+                  onClick={() => {
+                    trackServiceInquiry(service.title);
+                    trackButtonClick('Learn More', `service_${index + 1}`);
+                  }}
+                >
                   Learn more
                 </Link>
               </motion.div>

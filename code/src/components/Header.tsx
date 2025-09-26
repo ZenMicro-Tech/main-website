@@ -8,6 +8,7 @@ import arrow from "@/images/right-arrow 1.svg";
 import design from "@/images/Ellipse 2.svg";
 import Link from "next/link";
 import { LiaTimesSolid } from "react-icons/lia";
+import { trackButtonClick } from '@/lib/analytics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -111,7 +112,14 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex md:hidden px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center"
-                onClick={() => toggleMenu(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackButtonClick('Get Started', 'header_mobile');
+                  toggleMenu(false);
+                  setTimeout(() => {
+                    window.open('https://app.zenmicro.tech/', '_blank');
+                  }, 100);
+                }}
               >
                 Get Started
                 <span>
@@ -128,6 +136,13 @@ const Header = () => {
             className={`px-6 py-3 hidden rounded-[12px] bg-[#247CF8] font-normal text-white items-center ${
               pathname === "/pricing" ? "hidden" : "md:flex"
             }`}
+            onClick={(e) => {
+              e.preventDefault();
+              trackButtonClick('Get Started', 'header_desktop');
+              setTimeout(() => {
+                window.open('https://app.zenmicro.tech/', '_blank');
+              }, 100);
+            }}
           >
             Get Started
             <span>

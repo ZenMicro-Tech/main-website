@@ -122,12 +122,14 @@ const HeroHome = () => {
               className="flex items-center gap-[16px] mt-10"
               variants={childVariants}
             >
-              <Link
-                href={"/get-started"}
+              <a
+                href="https://app.zenmicro.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex sm:px-6 px-3 sm:py-3 py-2 rounded-[12px] bg-[#247CF8] font-normal text-white items-center w-max"
               >
-                Request Free Demo
-              </Link>
+                Try It for Free
+              </a>
               <Link
                 href={"/contact-us"}
                 className="flex sm:px-6 px-3 sm:py-3 py-2 rounded-[12px] bg-transparent font-normal text-white items-center border w-max"

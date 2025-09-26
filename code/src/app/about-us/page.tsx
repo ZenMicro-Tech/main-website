@@ -9,6 +9,7 @@ import AboutContact from "@/components/AboutContact";
 import AboutUsFooter from "@/components/AboutUsFooter";
 import Image from "next/image";
 // import Footer from "../../components/Footer";
+import PageTracker from "@/components/PageTracker";
 
 import design2 from "@/images/new/Ellipse 6.png";
 import { Metadata } from "next";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 const AboutUsPage = () => {
   return (
     <div className="relative overflow-hidden">
+      <PageTracker pageTitle="ZenMicro - About Us" />
       {/* <Header /> */}
       <Hero />
       <OurValues />

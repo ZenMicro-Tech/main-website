@@ -8,7 +8,7 @@ import Link from "next/link";
 import arrow from "@/images/right-arrow 1.svg";
 import design from "@/images/Ellipse 2.svg";
 import { motion } from "framer-motion";
-import { trackButtonClick } from '@/lib/analytics';
+import { trackButtonClick, trackConversion } from '@/lib/analytics';
 
 const Hero = () => {
   const containerVariants = {
@@ -127,6 +127,7 @@ const Hero = () => {
               onClick={(e) => {
                 e.preventDefault();
                 trackButtonClick('Get Started', 'hero_section');
+                trackConversion();
                 // Small delay to ensure tracking fires before navigation
                 setTimeout(() => {
                   window.open('https://app.zenmicro.tech/', '_blank');

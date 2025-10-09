@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from "react";
+import { trackButtonClick, trackConversion } from '@/lib/analytics';
 
 export default function SolutionPricing() {
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -197,6 +198,14 @@ export default function SolutionPricing() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-gray-600 text-white py-3 px-6 rounded-lg hover:bg-gray-700 transition-colors inline-block text-center"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackButtonClick('Get Started', 'pricing_free');
+                  trackConversion();
+                  setTimeout(() => {
+                    window.open('https://app.zenmicro.tech/', '_blank');
+                  }, 100);
+                }}
               >
                 Get Started
               </a>
@@ -215,6 +224,14 @@ export default function SolutionPricing() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors inline-block text-center"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackButtonClick('Get Started', 'pricing_basic');
+                  trackConversion();
+                  setTimeout(() => {
+                    window.open('https://app.zenmicro.tech/', '_blank');
+                  }, 100);
+                }}
               >
                 Get Started
               </a>
@@ -236,6 +253,14 @@ export default function SolutionPricing() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors inline-block text-center"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackButtonClick('Get Started', 'pricing_premium');
+                  trackConversion();
+                  setTimeout(() => {
+                    window.open('https://app.zenmicro.tech/', '_blank');
+                  }, 100);
+                }}
               >
                 Get Started
               </a>
@@ -254,6 +279,14 @@ export default function SolutionPricing() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors inline-block text-center"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackButtonClick('Get Started', 'pricing_business');
+                  trackConversion();
+                  setTimeout(() => {
+                    window.open('https://app.zenmicro.tech/', '_blank');
+                  }, 100);
+                }}
               >
                 Get Started
               </a>

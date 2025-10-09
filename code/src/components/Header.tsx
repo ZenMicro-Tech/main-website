@@ -8,7 +8,7 @@ import arrow from "@/images/right-arrow 1.svg";
 import design from "@/images/Ellipse 2.svg";
 import Link from "next/link";
 import { LiaTimesSolid } from "react-icons/lia";
-import { trackButtonClick } from '@/lib/analytics';
+import { trackButtonClick, trackConversion } from '@/lib/analytics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -115,6 +115,7 @@ const Header = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   trackButtonClick('Get Started', 'header_mobile');
+                  trackConversion();
                   toggleMenu(false);
                   setTimeout(() => {
                     window.open('https://app.zenmicro.tech/', '_blank');
@@ -139,6 +140,7 @@ const Header = () => {
             onClick={(e) => {
               e.preventDefault();
               trackButtonClick('Get Started', 'header_desktop');
+              trackConversion();
               setTimeout(() => {
                 window.open('https://app.zenmicro.tech/', '_blank');
               }, 100);

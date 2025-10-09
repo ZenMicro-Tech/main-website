@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 import { Suspense } from "react";
 import GlobalLoader from "@/components/GlobalLoader";
 import Footer from "@/components/Footer";
-import GoogleTagManager from "@/components/GoogleTagManager";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleAds from "@/components/GoogleAds";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,12 +83,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}  ${sofia_Sans.variable} antialiased bg-[#0F1433]`}
       >
-        {/* Add your GTM ID here when you get it from Google Tag Manager */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        {/* Google Ads Conversion Tracking */}
+        {process.env.NEXT_PUBLIC_GOOGLE_ADS_ID && (
+          <GoogleAds conversionId={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} />
         )}
-        
-        {/* Add your GA4 Measurement ID when you get it from Google Analytics */}
+
+        {/* Google Analytics 4 (optional) */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}

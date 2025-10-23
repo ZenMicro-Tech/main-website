@@ -187,16 +187,6 @@ const Services = () => {
                   {service.title}
                 </h3>
                 <p className="mb-8">{service.dscription}</p>
-                <Link 
-                  className="px-6 py-3 border rounded-lg w-max" 
-                  href={"#"}
-                  onClick={() => {
-                    trackServiceInquiry(service.title);
-                    trackButtonClick('Learn More', `service_${index + 1}`);
-                  }}
-                >
-                  Learn more
-                </Link>
               </motion.div>
             </motion.div>
           ))}

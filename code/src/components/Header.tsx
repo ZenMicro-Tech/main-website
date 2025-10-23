@@ -10,8 +10,6 @@ import Link from "next/link";
 import { LiaTimesSolid } from "react-icons/lia";
 import { trackButtonClick, trackConversion } from '@/lib/analytics';
 
-// Change to push
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -109,50 +107,85 @@ const Header = () => {
                 Contact Us
               </Link>
 
-              <a
-                href="https://app.zenmicro.tech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex md:hidden px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center"
-                onClick={(e) => {
-                  e.preventDefault();
-                  trackButtonClick('Get Started', 'header_mobile');
-                  trackConversion();
-                  toggleMenu(false);
-                  setTimeout(() => {
-                    window.open('https://app.zenmicro.tech/', '_blank');
-                  }, 100);
-                }}
-              >
-                Get Started
-                <span>
-                  <Image src={arrow} alt="Arrow" className="size-6" priority />
-                </span>
-              </a>
+              <div className="flex md:hidden gap-3 w-full flex-col">
+                <a
+                  href="https://app.zenmicro.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex px-6 py-3 rounded-[12px] bg-transparent border-2 border-[#247CF8] font-normal text-white items-center justify-center"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    trackButtonClick('Login', 'header_mobile');
+                    toggleMenu(false);
+                    setTimeout(() => {
+                      window.open('https://app.zenmicro.tech/', '_blank');
+                    }, 100);
+                  }}
+                >
+                  Login
+                </a>
+                <a
+                  href="https://app.zenmicro.tech/signup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center justify-center"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    trackButtonClick('Sign Up', 'header_mobile');
+                    trackConversion();
+                    toggleMenu(false);
+                    setTimeout(() => {
+                      window.open('https://app.zenmicro.tech/signup', '_blank');
+                    }, 100);
+                  }}
+                >
+                  Sign Up
+                  <span>
+                    <Image src={arrow} alt="Arrow" className="size-6" priority />
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <a
-            href="https://app.zenmicro.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-6 py-3 hidden rounded-[12px] bg-[#247CF8] font-normal text-white items-center ${
-              pathname === "/pricing" ? "hidden" : "md:flex"
-            }`}
-            onClick={(e) => {
-              e.preventDefault();
-              trackButtonClick('Get Started', 'header_desktop');
-              trackConversion();
-              setTimeout(() => {
-                window.open('https://app.zenmicro.tech/', '_blank');
-              }, 100);
-            }}
-          >
-            Get Started
-            <span>
-              <Image src={arrow} alt="Arrow" className="size-6" priority />
-            </span>
-          </a>
+          <div className={`hidden gap-3 ${
+            pathname === "/pricing" ? "hidden" : "md:flex"
+          }`}>
+            <a
+              href="https://app.zenmicro.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex px-6 py-3 rounded-[12px] bg-transparent border-2 border-[#247CF8] font-normal text-white items-center justify-center hover:bg-[#247CF8]/10 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                trackButtonClick('Login', 'header_desktop');
+                setTimeout(() => {
+                  window.open('https://app.zenmicro.tech/', '_blank');
+                }, 100);
+              }}
+            >
+              Login
+            </a>
+            <a
+              href="https://app.zenmicro.tech/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex px-6 py-3 rounded-[12px] bg-[#247CF8] font-normal text-white items-center justify-center hover:bg-[#247CF8]/90 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                trackButtonClick('Sign Up', 'header_desktop');
+                trackConversion();
+                setTimeout(() => {
+                  window.open('https://app.zenmicro.tech/signup', '_blank');
+                }, 100);
+              }}
+            >
+              Sign Up
+              <span>
+                <Image src={arrow} alt="Arrow" className="size-6" priority />
+              </span>
+            </a>
+          </div>
         </div>
       </div>
 

@@ -42,3 +42,28 @@ yarn-error.log*
 next-env.d.ts
 
 out
+/code/out
+/code/html_public
+
+# Built site artifacts at repo root (now produced by GitHub Actions on the gh-pages branch)
+/_next
+/index.html
+/index.txt
+/404.html
+/404
+/blog
+/about-us
+/contact-us
+/pricing
+/solution-pricing
+/favicon.ico
+/logo.png
+/logoSquare.png
+/CloudSpendGrowth.png
+/ZenMicro-Chat.png
+/ZenMicro-Welcome.png
+/file.svg
+/globe.svg
+/next.svg
+/vercel.svg
+/window.svg

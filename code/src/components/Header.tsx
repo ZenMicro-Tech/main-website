@@ -96,6 +96,17 @@ const Header = () => {
                 Solution & Pricing
               </Link>
               <Link
+                href="/blog"
+                className={`${
+                  pathname.startsWith("/blog")
+                    ? "text-[#247CF8] font-bold text-[18px]"
+                    : ""
+                }`}
+                onClick={() => toggleMenu(false)}
+              >
+                Blog
+              </Link>
+              <Link
                 href="/contact-us"
                 className={`${
                   isActive("/contact-us")
